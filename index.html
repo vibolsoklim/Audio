@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PordAudio - Creative Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <h1 class="logo">PordAudio<span class="logo-accent">.</span></h1>
+            <nav class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark and light mode">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                    <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.44 7.44a.75.75 0 011.06-1.06L9.586 7.828a.75.75 0 01-1.06 1.06l-1.086-1.086zM2.25 12a.75.75 0 01.75-.75h2.25a.75.75 0 010 1.5H3a.75.75 0 01-.75-.75zM16.56 7.44a.75.75 0 011.06 1.06l-1.086 1.086a.75.75 0 01-1.06-1.06l1.086-1.086zM12 17.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0v-2.25a.75.75 0 01.75-.75zM7.44 16.56a.75.75 0 011.06 1.06l-1.086 1.086a.75.75 0 01-1.06-1.06l1.086-1.086zM19.803 12a7.75 7.75 0 10-15.606 0h15.606zM16.56 16.56a.75.75 0 011.06 1.06l-1.086 1.086a.75.75 0 01-1.06-1.06l1.086-1.086z" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero section animate-on-scroll">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <p class="greeting">Hello, I'm </p>
+                    <h2 class="name">VIBOL SOKLIM</h2>
+                    <h3 class="title text-neon-glow">Creative Developer</h3>
+                    <p class="tagline">— Turning Ideas Into Reality</p>
+                    <div class="cta-buttons">
+                        <a href="#contact" class="btn btn-primary">Hire Me</a>
+                        <a href="VIBOL SOKLIM_CV.pdf" class="btn btn-secondary" download="VIBOL SOKLIM_CV.pdf">Download CV</a>
+                    </div>
+                </div>
+                <div class="hero-photo">
+                    <img src="Pic1.png" alt="PordAudio Photo" class="hero-image" loading="lazy" style="max-width:100%;height:auto;">
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about section animate-on-scroll">
+            <div class="container">
+                <h2 class="section-heading">About Me</h2>
+                <div class="about-content">
+                    <p class="bio">
+                        I am a passionate Creative Developer specializing in modern web technologies. 
+                        My journey focuses on building beautiful, performant, and accessible digital 
+                        experiences. With a background in UI/UX and full-stack development, I transform 
+                        complex challenges into elegant, functional solutions.
+                    </p>
+                    <div class="skills-summary">
+                        <h3>Key Focuses:</h3>
+                        <ul>
+                            <li>Responsive Design & Accessibility</li>
+                            <li>Component-Based Architecture (React)</li>
+                            <li>Performance Optimization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills section animate-on-scroll">
+            <div class="container">
+                <h2 class="section-heading">My Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <i class="skill-icon icon-react"></i>
+                        <h4 class="skill-title">HTML</h4>
+                        <div class="skill-bar"><div class="skill-level" style="width: 80%;"></div></div>
+                        <span class="skill-percent">90%</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="skill-icon icon-tailwind"></i>
+                        <h4 class="skill-title"> CSS</h4>
+                        <div class="skill-bar"><div class="skill-level" style="width: 70%;"></div></div>
+                        <span class="skill-percent">95%</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="skill-icon icon-node"></i>
+                        <h4 class="skill-title">React / JavaScript</h4>
+                        <div class="skill-bar"><div class="skill-level" style="width: 50%;"></div></div>
+                        <span class="skill-percent">75%</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects section animate-on-scroll">
+            <div class="container">
+                <h2 class="section-heading">Featured Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card glassmorphism-bg">
+                        <div class="project-preview"></div> <h3>Question and Answer</h3>
+                        <p>A responsive e-commerce platform built with modern state management.</p>
+                        <div class="project-tags"><span>#HTML</span><span>#CSS</span><span>#JS</span></div>
+                        <a href="https://web-zeta-pink-80.vercel.app/#" class="btn btn-card-view">View Project</a>
+                    </div>
+                    <div class="project-card glassmorphism-bg">
+                        <div class="project-preview"></div> <h3>Wizdumb Co., Ltd</h3>
+                        <p>A creative developer portfolio showcasing smooth scroll effects and animations.</p>
+                        <div class="project-tags"><span>#HTML</span><span>#CSS</span></div>
+                        <a href="https://wizdumb-co-ltd23.vercel.app/#" class="btn btn-card-view">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="services" class="services section animate-on-scroll">
+            <div class="container">
+                <h2 class="section-heading">What I Offer</h2>
+                <div class="services-grid">
+                    <div class="service-card glassmorphism-bg">
+                        <i class="service-icon">💡</i>
+                        <h3>Front-End Development</h3>
+                        <p>Building high-performance, accessible, and responsive user interfaces.</p>
+                    </div>
+                    <!-- <div class="service-card glassmorphism-bg">
+                        <i class="service-icon">🗄️</i>
+                        <h3>Full-Stack Solutions</h3>
+                        <p>End-to-end development including robust back-end APIs and database integration.</p>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+
+        <!-- <section id="contact" class="contact section animate-on-scroll">
+            <div class="container">
+                <h2 class="section-heading">Get In Touch</h2>
+                <div class="contact-content">
+                    <form class="contact-form glassmorphism-bg">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form> -->
+        <section id="contact" class="contact section animate-on-scroll">
+             <div class="container">
+                 <h2 class="section-heading">Get In Touch</h2>
+                     <div class="contact-content">
+                        <form 
+                             class="contact-form glassmorphism-bg"
+                             action="mailto:vibolsoklim@gmail.com" 
+                            method="POST" 
+                            enctype="text/plain" 
+                            >
+                        <input type="text" placeholder="Your Name" required>
+                         <input type="email" placeholder="Your Email" required>
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                     <button type="submit" class="btn btn-primary">Send Message</button>
+             </form>
+
+                    <div class="social-links">
+                        <p>Find me on: +885 887290772</p>
+                        <a href="https://web.facebook.com/?_rdc=1&_rdr#" class="social-icon" target="_blank" rel="noopener noreferrer">Facebook</a>
+                        <a href="https://t.me/Lim_2727#" class="social-icon">Telegram</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 PordAudio. All rights reserved.</p>
+            <p>Designed and Developed with 💙 by Vibol Soklim.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Smooth Scroll Behavior
+            document.documentElement.style.scrollBehavior = 'smooth';
+
+            // 1. Dark Mode Toggle Logic
+            const toggle = document.getElementById('theme-toggle');
+            const body = document.body;
+
+            // Check system preference on load
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+                // Keep default dark if user prefers it, or set light mode
+                // For this theme, we default to dark, so we only toggle if explicitly needed later.
+            }
+
+            toggle.addEventListener('click', () => {
+                body.classList.toggle('light-mode');
+                // Optional: Save preference to localStorage
+                // const isLight = body.classList.contains('light-mode');
+                // localStorage.setItem('theme', isLight ? 'light' : 'dark');
+            });
+
+
+            // 2. Scroll Animation Logic (Intersection Observer)
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                rootMargin: '0px',
+                threshold: 0.1 // Trigger when 10% of the element is visible
+            });
+
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>

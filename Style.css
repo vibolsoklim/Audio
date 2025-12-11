@@ -1,0 +1,543 @@
+/* ==================================== */
+/* 0. CSS Variables & Global Resets */
+/* ==================================== */
+
+:root {
+    /* Color Palette */
+    --color-dark-bg: #0A0A0A;         /* Deep Charcoal/Black */
+    --color-dark-surface: #1C1C1C;    /* Darker surfaces */
+    --color-neon-blue: #0D94FF;       /* Bright Electric Blue */
+    --color-neon-blue-light: #2563EB; /* Slightly softer blue */
+    --color-text-light: #E5E7EB;      /* Off-white text */
+    --color-text-secondary: #9CA3AF;  /* Gray text */
+    
+    /* Font */
+    --font-family-primary: 'Poppins', sans-serif;
+    
+    /* Spacing */
+    --spacing-container: 80px;
+}
+
+/* Light Mode Variables (Toggled via JS on body.light-mode) */
+body.light-mode {
+    --color-dark-bg: #F9FAFB;
+    --color-dark-surface: #FFFFFF;
+    --color-text-light: #1F2937;
+    --color-text-secondary: #4B5563;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family-primary);
+    background-color: var(--color-dark-bg);
+    color: var(--color-text-light);
+    line-height: 1.6;
+    transition: background-color 0.5s ease, color 0.5s ease; /* Smooth dark/light transition */
+}
+
+/* Base Utility Class */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: var(--spacing-container) 0;
+    min-height: 85vh; /* Ensure sections are visible */
+}
+
+.section-heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-neon-blue);
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+}
+.section-heading::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-neon-blue);
+    margin: 10px auto 0;
+    box-shadow: 0 0 8px var(--color-neon-blue);
+}
+
+/* ==================================== */
+/* 1. Neon Glow & Glassmorphism Effects */
+/* ==================================== */
+
+/* Text Glow Effect */
+.text-neon-glow {
+    text-shadow: 
+        0 0 5px rgba(13, 148, 255, 0.6), 
+        0 0 15px rgba(13, 148, 255, 0.4);
+    transition: text-shadow 0.3s;
+}
+
+/* Glassmorphism Background */
+.glassmorphism-bg {
+    background-color: rgba(255, 255, 255, 0.05); /* Very light white transparency */
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+.glassmorphism-bg:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 25px rgba(13, 148, 255, 0.2); /* Soft neon shadow on hover */
+}
+body.light-mode .glassmorphism-bg {
+    background-color: rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* ==================================== */
+/* 2. Navbar & Theme Toggle */
+/* ==================================== */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 15px 0;
+    background-color: rgba(10, 10, 10, 0.95); /* Semi-transparent dark bg for fixed header */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background-color 0.5s;
+}
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+.logo-accent {
+    color: var(--color-neon-blue);
+}
+.nav-links a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 500;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+.nav-links a:hover {
+    color: var(--color-neon-blue);
+    text-shadow: 0 0 5px rgba(13, 148, 255, 0.5);
+}
+.theme-toggle {
+    background: none;
+    border: none;
+    color: var(--color-text-light);
+    cursor: pointer;
+    transition: color 0.3s;
+}
+.theme-toggle:hover {
+    color: var(--color-neon-blue);
+}
+
+/* ==================================== */
+/* 3. Hero Section */
+/* ==================================== */
+
+.hero {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 100px;
+}
+.hero-text {
+    margin-bottom: 50px;
+}
+.greeting {
+    font-size: 1.2rem;
+    color: var(--color-neon-blue);
+    margin-bottom: 5px;
+}
+.name {
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin: 0;
+}
+.title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--color-text-light);
+    margin-top: 5px;
+}
+.tagline {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+    margin-top: 15px;
+}
+.cta-buttons {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+.hero-photo {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-neon-blue-light) 0%, transparent 70%);
+    padding: 5px;
+    animation: pulseGlow 4s infinite alternate; /* Neon pulse effect */
+}
+.hero-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--color-dark-bg);
+}
+
+/* Keyframe for subtle neon pulse */
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 10px rgba(13, 148, 255, 0.4); }
+    100% { box-shadow: 0 0 25px rgba(13, 148, 255, 0.7); }
+}
+
+/* ==================================== */
+/* 4. Buttons */
+/* ==================================== */
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-align: center;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+.btn-primary {
+    background-color: var(--color-neon-blue);
+    color: var(--color-dark-bg);
+    box-shadow: 0 5px 15px rgba(13, 148, 255, 0.4);
+}
+.btn-primary:hover {
+    background-color: var(--color-neon-blue-light);
+    box-shadow: 0 5px 20px rgba(13, 148, 255, 0.7);
+}
+.btn-secondary {
+    background: transparent;
+    color: var(--color-neon-blue);
+    border: 2px solid var(--color-neon-blue);
+}
+.btn-secondary:hover {
+    background-color: var(--color-neon-blue);
+    color: var(--color-dark-bg);
+    border-color: var(--color-neon-blue-light);
+}
+
+/* ==================================== */
+/* 5. Skills & Projects Grid */
+/* ==================================== */
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.skill-item {
+    padding: 25px;
+    border-radius: 10px;
+    background-color: var(--color-dark-surface);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+.skill-title {
+    font-size: 1.2rem;
+    color: var(--color-neon-blue);
+    margin-bottom: 10px;
+}
+.skill-bar {
+    height: 8px;
+    background-color: var(--color-text-secondary);
+    border-radius: 4px;
+    overflow: hidden;
+}
+.skill-level {
+    height: 100%;
+    background-color: var(--color-neon-blue);
+    border-radius: 4px;
+    transition: width 1s ease-out; /* Smooth fill animation */
+}
+.skill-percent {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-weight: 700;
+    color: var(--color-neon-blue);
+}
+
+/* Projects Section */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+.project-card {
+    padding: 30px;
+    text-align: left;
+    height: 100%;
+}
+.project-preview {
+    height: 180px;
+    background-color: var(--color-dark-surface); /* Placeholder color */
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+.project-card h3 {
+    color: var(--color-neon-blue);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+.project-tags span {
+    display: inline-block;
+    background-color: var(--color-neon-blue);
+    color: var(--color-dark-bg);
+    font-size: 0.8rem;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-right: 5px;
+    margin-top: 10px;
+}
+.btn-card-view {
+    margin-top: 20px;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+}
+
+/* ==================================== */
+/* 6. About, Services & Contact */
+/* ==================================== */
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+.bio {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: var(--color-text-secondary);
+}
+.skills-summary h3 {
+    color: var(--color-neon-blue);
+    margin-bottom: 10px;
+}
+.skills-summary ul {
+    list-style: none;
+    padding: 0;
+}
+.skills-summary li {
+    background-color: var(--color-dark-surface);
+    display: inline-block;
+    padding: 5px 15px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+/* Services */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.service-card {
+    padding: 30px;
+    text-align: center;
+}
+.service-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 15px;
+}
+.service-card h3 {
+    color: var(--color-neon-blue);
+    margin-bottom: 10px;
+}
+
+/* Contact */
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+    padding: 35px;
+}
+.contact-form input, 
+.contact-form textarea {
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.05); /* Match glassmorphism */
+    color: var(--color-text-light);
+    font-family: var(--font-family-primary);
+    transition: border-color 0.3s;
+}
+.contact-form input:focus, 
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--color-neon-blue);
+    box-shadow: 0 0 5px rgba(13, 148, 255, 0.5);
+}
+.contact-form button {
+    margin-top: 10px;
+}
+.social-links a {
+    display: inline-block;
+    margin: 0 10px;
+    color: var(--color-neon-blue);
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.3s;
+}
+.social-links a:hover {
+    transform: translateY(-3px);
+}
+
+
+/* ==================================== */
+/* 7. Footer */
+/* ==================================== */
+
+.footer {
+    padding: 30px 0;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: var(--color-dark-surface);
+}
+.footer p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+}
+
+
+/* ==================================== */
+/* 8. Animations & Responsiveness */
+/* ==================================== */
+
+/* Scroll Animations */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* === Media Queries (Responsiveness) === */
+
+/* Tablet & Smaller Desktop */
+@media (min-width: 768px) {
+    .hero-content {
+        flex-direction: row;
+        text-align: left;
+        padding: 150px 0;
+    }
+    .hero-text {
+        width: 55%;
+        margin-bottom: 0;
+    }
+    .hero-photo {
+        width: 320px;
+        height: 320px;
+    }
+    .cta-buttons {
+        justify-content: flex-start;
+    }
+    .name {
+        font-size: 5.5rem;
+    }
+    .title {
+        font-size: 3rem;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 767px) {
+    .navbar {
+        padding: 10px 0;
+    }
+    .nav-links {
+        display: none; /* Hide for simple mobile structure, can be replaced with a hamburger menu */
+    }
+    .hero {
+        min-height: 90vh;
+    }
+    .hero-text {
+        order: 2; /* Move text below photo on mobile */
+    }
+    .hero-photo {
+        order: 1;
+        margin-bottom: 40px;
+    }
+    .name {
+        font-size: 3rem;
+    }
+    .title {
+        font-size: 1.8rem;
+    }
+    .cta-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .btn {
+        width: 100%;
+    }
+    .section {
+        padding: 60px 0;
+        min-height: unset;
+    }
+    .section-heading {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+    .contact-form {
+        padding: 20px;
+    }
+}
